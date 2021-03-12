@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nvne-user-admin-service
+  name: service-espace-entreprise
   namespace: nvne
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nvne-user-admin-service
+      app: service-espace-entreprise
   template:
     metadata:
       labels:
-        app: nvne-user-admin-service
+        app: service-espace-entreprise
     spec:
       # serviceAccountName: nvne-user-service-ksa
       containers:
-        - name: nvne-user-admin-service
-          image: gcr.io/stellar-spark-300508/nvne-user-admin-service:0.0.5
+        - name: service-espace-entreprise
+          image: gcr.io/stellar-spark-300508/service-espace-entreprise:0.0.1
           ports:
             - containerPort: 8081
           env:
